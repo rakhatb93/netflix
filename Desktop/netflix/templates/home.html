@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block head %}
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   -->
+<title>Netflix's films and serials</title>   
+{% endblock %}
+{% block content %}
+   <h1>Choose you favourite films and serials</h1>
+   <br>
+   <div class="row">
+   	  <div class="col-8">
+   	  	<strong>Search a movie or a serial: {{tag}}</strong>
+   	  </div>
+   	  <div class="col-4">
+   	  	<form action="" method="post" autocomplete="off"></form>
+   	  	<div class="row">
+   	  		<div class="col-6">
+   	  			<input type="text" class="form-control" name="tag" id="tag" placeholder="Enter title"/>
+   	  		</div>
+   	  		<div class="col-6" align="left">
+   	  			<input type="submit" value="Search" class="form-control btn btn-primary" name="">
+   	  		</div>
+   	  	</div>
+   	  </div>
+   </div>
+   <br>
+   <table>
+   	  <thead>
+   	  	 <tr>
+   	  	 	<th>show_id</th>
+   	  	 	<th>type</th>
+   	  	 	<th>title</th>
+   	  	 	<th>director</th>
+   	  	 	<th>cast</th>
+   	  	 	<th>country</th>
+   	  	 	<th>date_added</th>
+   	  	 	<th>release_year</th>
+   	  	 	<th>rating</th>
+   	  	 	<th>duration</th>
+   	  	 	<th>listed_in</th>
+   	  	 	<th>description</th>
+   	  	 </tr>
+   	  </thead>
+   	  <tbody>
+   	  	{% for row in data %}
+   	  	   <tr>
+   	  	   	  <td>{{row[0]}}</td>
+   	  	   	  <td>{{row[1]}}</td>
+   	  	   	  <td>{{row[2]}}</td>
+   	  	   	  <td>{{row[3]}}</td>
+   	  	   	  <td>{{row[4]}}</td>
+   	  	   	  <td>{{row[5]}}</td>
+   	  	   	  <td>{{row[6]}}</td>
+   	  	   	  <td>{{row[7]}}</td>
+   	  	   	  <td>{{row[8]}}</td>
+   	  	   	  <td>{{row[9]}}</td>
+   	  	   	  <td>{{row[10]}}</td>
+   	  	   	  <td>{{row[11]}}</td>
+   	  	   </tr>
+   	  	{% endfor %}   
+   	  </tbody>
+   </table>
+{% endblock %}
